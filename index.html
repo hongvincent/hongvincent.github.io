@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hongvincent — Curriculum Vitae</title>
+  <meta name="description" content="AI Systems Engineer specializing in production agentic systems and LLM red-teaming.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #555555;
+      --border: #d0d7de;
+      --border-light: #e5e7eb;
+      --accent: #0969da;
+      --tag-bg: #f6f8fa;
+      --tag-text: #24292f;
+      --font-serif: "Charter", "Bitstream Charter", "Sitka Text", "Cambria", "Georgia", serif;
+      --font-mono: ui-monospace, "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --text-muted: #8b949e;
+        --border: #30363d;
+        --border-light: #21262d;
+        --accent: #58a6ff;
+        --tag-bg: #161b22;
+        --tag-text: #c9d1d9;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-serif);
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 48px 20px;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 32px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .header-links {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      display: flex;
+      gap: 14px;
+      color: var(--text-muted);
+    }
+
+    .header-links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .header-links a:hover {
+      text-decoration: underline;
+    }
+
+    .subtitle {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .bio {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* Focus Grid */
+    .focus-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .focus-item strong {
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+
+    .focus-item p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Milestones Table */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    th {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 12px 8px 0;
+    }
+
+    td {
+      padding: 12px 12px 12px 0;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+    }
+
+    .col-date {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      width: 85px;
+      color: var(--text);
+    }
+
+    .col-title strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .col-title span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .col-outcome {
+      font-size: 13.5px;
+      color: var(--text);
+    }
+
+    .col-link {
+      white-space: nowrap;
+      text-align: right;
+      width: 75px;
+    }
+
+    .col-link a {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .col-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tech Stack */
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* Print Specific */
+    @media print {
+      body {
+        padding: 0;
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 12pt;
+      }
+      a {
+        color: #000 !important;
+        text-decoration: none !important;
+      }
+      .tag {
+        border-color: #ccc !important;
+        background: none !important;
+        color: #000 !important;
+      }
+      .header-links a::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <h1>hongvincent</h1>
+        <div class="header-links">
+          <a href="https://github.com/hongvincent">github.com/hongvincent</a>
+          <span>·</span>
+          <span>Seoul, KR</span>
+        </div>
+      </div>
+      <div class="subtitle">AI Systems Engineer · Production Agent Runtimes & LLM Red-Teaming</div>
+      <p class="bio">
+        Specializing in multi-tenant agent execution architectures, deterministic contract boundaries, and adversarial vulnerability discovery. I build runtime guardrails and automated evaluation harnesses to keep frontier models bounded under adversarial pressure.
+      </p>
+    </header>
+
+    <section>
+      <h2>Engineering Focus</h2>
+      <ul class="focus-list">
+        <li class="focus-item">
+          <strong>Production Agent Systems</strong>
+          <p>Deterministic state machines, multi-tenant isolation, contract-based tool calling, and fail-closed retrieval pipelines.</p>
+        </li>
+        <li class="focus-item">
+          <strong>Adversarial Safety & Red-Teaming</strong>
+          <p>Real-world jailbreak heuristics, prompt injection mitigation, automated policy verification, and empirical robustness benchmarks.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Track Record & Empirical Milestones</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Timeline</th>
+              <th>Competition / Program</th>
+              <th>Outcome & Scope</th>
+              <th style="text-align: right;">Evidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-date">2026.09</td>
+              <td class="col-title">
+                <strong>National AI Competition (AI CHAMPION)</strong>
+                <span>Telecommunications Technology Association (TTA)</span>
+              </td>
+              <td class="col-outcome">National Finalist (Top 100) with <em>Moong</em>, hyper-personalized companion agent</td>
+              <td class="col-link"><a href="https://www.tta.or.kr" target="_blank" rel="noopener">TTA ↗</a></td>
+            </tr>
+            <tr>
+              <td class="col-date">2026.08</td>
+              <td class="col-title">
+                <strong>Global Piuda Project</strong>
+                <span>Metropolitan ICT·IS</span>
+              </td>
+              <td class="col-outcome">Encouragement Award for <em>Moong: Silver Blossom</em> (Eldercare assistive AI robot)</td>
+              <td class="col-link"><a href="https://github.com/hongvincent" target="_blank" rel="noopener">Overview ↗</a></td>
+            </tr>
+            <tr>
+              <td class="col-date">2026.07</td>
+              <td class="col-title">
+                <strong>SFASS 2026 AI Red-Teaming Workshop</strong>
+                <span>ETRI / AI Safety Institute</span>
+              </td>
+              <td class="col-outcome">Top 5 Finalist in live humanoid dialog red-teaming</td>
+              <td class="col-link"><a href="https://www.newsis.com/view/NISX20260708_0003701530" target="_blank" rel="noopener">Coverage ↗</a></td>
+            </tr>
+            <tr>
+              <td class="col-date">2026.06</td>
+              <td class="col-title">
+                <strong>AIM Intelligence AI Red-Team Arena 2026</strong>
+                <span>Global Leaderboard</span>
+              </td>
+              <td class="col-outcome">Ranked #33 globally (709.00 pts, 91 confirmed breaches across GPT, Claude, and Gemini)</td>
+              <td class="col-link"><a href="https://judgementday.aim-intelligence.com/leaderboard" target="_blank" rel="noopener">Arena ↗</a></td>
+            </tr>
+            <tr>
+              <td class="col-date">2026.06</td>
+              <td class="col-title">
+                <strong>KSA Service AI Leader Award 2026</strong>
+                <span>Korea Standards Association</span>
+              </td>
+              <td class="col-outcome">Service AI Leader · Technical lead for award-winning production AI agent</td>
+              <td class="col-link"><a href="https://www.ksa.or.kr" target="_blank" rel="noopener">KSA ↗</a></td>
+            </tr>
+            <tr>
+              <td class="col-date">2026.01</td>
+              <td class="col-title">
+                <strong>CES 2026 Innovation Awards</strong>
+                <span>Artificial Intelligence</span>
+              </td>
+              <td class="col-outcome">AI Honoree · Lead engineer for production healthcare AI platform agent</td>
+              <td class="col-link"><a href="https://www.ces.tech/ces-innovation-awards/2026/talkcrm-ai-intelligent-care-communication-platform/" target="_blank" rel="noopener">CES ↗</a></td>
+            </tr>
+            <tr>
+              <td class="col-date">2025.09</td>
+              <td class="col-title">
+                <strong>Korea MFDS AI Medical-Device Red-Team Challenge</strong>
+                <span>Ministry of Food and Drug Safety</span>
+              </td>
+              <td class="col-outcome">Grand Prize for clinical safety verification and prompt injection discovery</td>
+              <td class="col-link"><a href="https://www.etnews.com/20250909000217" target="_blank" rel="noopener">Coverage ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Engineering Runtime Stack</h2>
+      <div class="stack-tags">
+        <span class="tag">Python</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">AWS (Bedrock, ECS, Lambda)</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Datadog</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
